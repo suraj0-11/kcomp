@@ -20,7 +20,7 @@ async def eval(event):
     if str(event.sender_id) not in OWNER:
         if event.sender_id != DEV:
             return
-    await event.reply("Processing ...")
+    x = await event.reply("`Processing ...`")
     cmd = event.text.split(" ", maxsplit=1)[1]
     old_stderr = sys.stderr
     old_stdout = sys.stdout
@@ -55,9 +55,9 @@ async def eval(event):
                 allow_cache=False,
                 caption=cmd,
             )
-            await event.delete()
+            await x.delete()
     else:
-        await event.reply(final_output)
+        await x.edit(final_output)
 
 
 async def aexec(code, event):
@@ -69,6 +69,7 @@ async def bash(event):
     if str(event.sender_id) not in OWNER:
         if event.sender_id != DEV:
             return
+    x = await event.reply("`Processing ...`")
     cmd = event.text.split(" ", maxsplit=1)[1]
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -94,5 +95,5 @@ async def bash(event):
                 allow_cache=False,
                 caption=cmd,
             )
-            await event.delete()
-    await event.reply(OUTPUT)
+            await x.delete()
+    await x.edit(OUTPUT)
