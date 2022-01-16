@@ -33,9 +33,9 @@ async def stats(e):
 
 
 async def dl_link(event):
-    if not event.is_private:
+    if event.is_private:
         return
-    if str(event.sender_id) not in OWNER:
+    if str(event.chat_id) not in OWNER_CHAT:
         return
     link, name = "", ""
     try:
@@ -127,9 +127,9 @@ async def dl_link(event):
 
 async def encod(event):
     try:
-        if not event.is_private:
+        if event.is_private:
             return
-        if str(event.sender_id) not in OWNER:
+        if str(event.chat_id) not in OWNER_CHAT:
             return
         if not event.media:
             return
