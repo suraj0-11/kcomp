@@ -267,3 +267,20 @@ async def encod(event):
     except BaseException as er:
         LOGS.info(er)
         WORKING.clear()
+
+async def thumbnail(event):
+    if event.is_private:
+        return
+    if str(event.chat_id) not in OWNER_CHAT:
+        return
+    try:
+        os.remove("thumb.jpg")
+    except:
+        pass
+    link = event.text.split()[1]
+    try:
+        os.system(f"wget {} -O thumb.jpg")
+        await event.reply("Successfully Updated the Thumbnail")
+    except Exception as err:
+        await event.reply("Error Occurred")
+        LOGS.info(str(err))
