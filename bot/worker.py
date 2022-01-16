@@ -279,7 +279,7 @@ async def thumbnail(event):
         pass
     link = event.text.split()[1]
     try:
-        os.system(f"wget {} -O thumb.jpg")
+        os.system(f"wget {link} -O thumb.jpg")
         await event.reply("Successfully Updated the Thumbnail")
     except Exception as err:
         await event.reply("Error Occurred")
