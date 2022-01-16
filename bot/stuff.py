@@ -17,7 +17,7 @@ from .worker import *
 
 
 async def up(event):
-    if not event.is_private:
+    if event.is_private:
         return
     stt = dt.now()
     ed = dt.now()
@@ -33,8 +33,8 @@ async def start(event):
         buttons=[
             [Button.inline("HELP", data="ihelp")],
             [
-                Button.url("SOURCE CODE", url="github.com/1Danish-00/"),
-                Button.url("DEVELOPER", url="t.me/danish_00"),
+                Button.url("SOURCE CODE", url="github.com/Kaif-00z/"),
+                Button.url("DEVELOPER", url="t.me/kaif-00z"),
             ],
         ],
     )
@@ -59,8 +59,8 @@ async def beck(event):
         buttons=[
             [Button.inline("HELP", data="ihelp")],
             [
-                Button.url("SOURCE CODE", url="github.com/1Danish-00/"),
-                Button.url("DEVELOPER", url="t.me/danish_00"),
+                Button.url("SOURCE CODE", url="github.com/kaif-00z/"),
+                Button.url("DEVELOPER", url="t.me/Kaif_00z"),
             ],
         ],
     )
