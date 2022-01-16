@@ -23,6 +23,10 @@
             "description": "Get ur Id Of Telegram nd Paste Here.",
             "value": ""
         },
+        "OWNER_CHAT": {
+            "description": "Get Id Of Telegram group nd Paste Here.",
+            "value": ""
+        },
         "THUMBNAIL": {
             "description": "Put Link of any picture.",
             "value": "https://telegra.ph/file/75ee20ec8d8c8bba84f02.jpg",
