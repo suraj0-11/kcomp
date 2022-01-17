@@ -268,6 +268,7 @@ async def encod(event):
         LOGS.info(er)
         WORKING.clear()
 
+"""
 async def thumbnail(event):
     if event.is_private:
         return
@@ -284,3 +285,4 @@ async def thumbnail(event):
     except Exception as err:
         await event.reply("Error Occurred")
         LOGS.info(str(err))
+"""
