@@ -87,9 +87,11 @@ async def _(e):
 async def _(e):
     await bash(e)
 
+"""
 @bot.on(events.NewMessage(pattern="/setthumb"))
 async def _(e):
     await thumbnail(e)
+"""
 
 ########## AUTO ###########
 
