@@ -21,7 +21,7 @@ async def up(event):
         return
     t = time.time()
     now = dt.now()
-    x = await event.edit("`Pɪɴɢ!!!`")
+    x = await event.reply("`Pɪɴɢ!!!`")
     tt = time.time() - t
     v = ts(int((now - uptime).seconds) * 1000)
     p = float(str(tt)) * 1000
