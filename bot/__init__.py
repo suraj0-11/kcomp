@@ -53,3 +53,6 @@ except Exception as e:
     LOGS.info("Bot is quiting...")
     LOGS.info(str(e))
     exit()
+
+async def startup():
+    await bot.send_message(int(Var.OWNER_CHAT),"**Bot is Successfully Deployed**")
