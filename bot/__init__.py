@@ -55,4 +55,4 @@ except Exception as e:
     exit()
 
 async def startup():
-    await bot.send_message(int(Var.OWNER_CHAT),"**Bot is Successfully Deployed**")
+    await bot.send_message(int(OWNER_CHAT),"**Bot is Successfully Deployed**")
