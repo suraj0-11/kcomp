@@ -105,7 +105,7 @@ async def something():
     for i in itertools.count():
         try:
             if not WORKING and QUEUE:
-                user = int(OWNER.split()[0])
+                user = int(OWNER_CHAT.split()[0])
                 e = await bot.send_message(user, "`Downloding Queue Files...`")
                 s = dt.now()
                 try:
@@ -211,7 +211,7 @@ async def something():
 
 ########### Start ############
 
-LOGS.info("Bot has started.")
+LOGS.info("Bot has started....")
 with bot:
     bot.loop.run_until_complete(something())
     bot.loop.run_forever()
