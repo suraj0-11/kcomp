@@ -50,9 +50,10 @@ async def dl_link(event):
         return await event.reply(f"Added {link} in QUEUE #{len(QUEUE)}")
     WORKING.append(1)
     s = dt.now()
+    _m_ = time.time()
     xxx = await event.reply("`Downloading...`")
     try:
-        dl = await fast_download(xxx, link, name)
+        dl = await fast_download(xxx, link, name, _m_)
     except Exception as er:
         WORKING.clear()
         LOGS.info(er)
