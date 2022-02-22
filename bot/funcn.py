@@ -170,7 +170,9 @@ async def skip(e):
     return
 
 
-async def fast_download(e, download_url, filename=None, time):
+async def fast_download(e, download_url, filename=None, _time=None):
+    if not _time:
+        _time = time.time()
     def progress_callback(d, t):
         return (
             asyncio.get_event_loop().create_task(
@@ -178,7 +180,7 @@ async def fast_download(e, download_url, filename=None, time):
                     d,
                     t,
                     e,
-                    time,
+                    _time,
                     f"Downloading from {download_url}",
                 )
             ),
