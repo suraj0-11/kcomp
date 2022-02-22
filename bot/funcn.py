@@ -198,7 +198,7 @@ async def fast_download(e, download_url, filename=None, _time=None):
                 filename = unquote(download_url.rpartition("/")[-1])
             total_size = int(response.headers.get("content-length", 0)) or None
             downloaded_size = 0
-            with open(filename, "wb") as f:
+            with open(f"downloads/{filename}", "wb") as f:
                 async for chunk in response.content.iter_chunked(1024):
                     if chunk:
                         f.write(chunk)
