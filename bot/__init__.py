@@ -36,7 +36,6 @@ from pathlib import Path
 import aiohttp
 import psutil
 from html_telegraph_poster import TelegraphPoster
-from redis import Redis
 from telethon import Button, TelegramClient, errors, events, functions, types
 from telethon.sessions import StringSession
 from telethon.utils import pack_bot_file_id
@@ -45,20 +44,6 @@ from .config import *
 
 basicConfig(format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=INFO)
 LOGS = getLogger(__name__)
-
-try:
-    redis_info = REDIS_URI.split(":")
-    dB = Redis(
-        host=redis_info[0],
-        port=redis_info[1],
-        password=REDIS_PASSWORD,
-        charset="utf-8",
-        decode_responses=True,
-    )
-    LOGS.info("successfully connected to redis database")
-except Exception:
-    LOGS.info(str(e))
-    exit()
 
 
 try:
