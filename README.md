@@ -9,7 +9,6 @@
 
 `OWNER_CHAT` : Put Id of Auth Groups with a space between it
 
-`/setthumb <link>` : Put telegraph link of a picture for use of Thumbnail without Thumbnail vot won't work
 
 `FFMPEG` : Put Your FFMPEG Code with "{}" as input and output. (Eg. `ffmpeg -i "{}" -preset veryfast -vcodec libx265 -crf 27 "{}"`)
 
