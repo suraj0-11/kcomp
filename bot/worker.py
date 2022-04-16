@@ -132,7 +132,7 @@ async def encod(event):
             return
         if str(event.chat_id) not in OWNER_CHAT:
             return
-        if not event.media:
+        if not event.media or event.gif or event.sticker:
             return
         if hasattr(event.media, "document"):
             if not event.media.document.mime_type.startswith(
